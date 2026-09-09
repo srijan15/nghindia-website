@@ -33,7 +33,7 @@ export default function ApplyPage() {
             {VALUE_PROPS.map((v, i) => (
               <ScrollReveal key={v} delay={i * 0.03}>
                 <div className="flex items-start gap-3 rounded-xl border border-[var(--line)] p-5">
-                  <span className="font-serif text-[var(--gold)] shrink-0">{`①②③④⑤⑥⑦`[i] ?? "—"}</span>
+                  <span className="font-serif text-[var(--violet)] shrink-0">{`①②③④⑤⑥⑦`[i] ?? "—"}</span>
                   <span className="text-sm text-[var(--ink-dim)]">{v}</span>
                 </div>
               </ScrollReveal>
@@ -49,7 +49,7 @@ export default function ApplyPage() {
             <ul className="space-y-3">
               {INVESTMENT_INCLUDES.map((i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
-                  <span className="text-[var(--gold)] mt-1">—</span>
+                  <span className="text-[var(--violet)] mt-1">—</span>
                   {i}
                 </li>
               ))}

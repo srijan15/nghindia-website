@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { FOUNDER_LINEAGE, CREDENTIAL_CHIPS } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
-import ScrollReveal from "@/components/ScrollReveal";
+import ScrollReveal, { Stagger, StaggerItem } from "@/components/ScrollReveal";
+import TiltCard from "@/components/TiltCard";
 
 export default function Founder() {
   return (
@@ -13,28 +14,32 @@ export default function Founder() {
         />
 
         <div className="mt-16 grid md:grid-cols-2 gap-10">
-          <ScrollReveal className="rounded-2xl border border-[var(--line)] p-8">
-            <h3 className="font-serif text-2xl text-[var(--gold-bright)] mb-4">From the West</h3>
-            <ul className="space-y-3">
-              {FOUNDER_LINEAGE.west.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
-                  <span className="text-[var(--gold)] mt-1">—</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1} className="rounded-2xl border border-[var(--line)] p-8">
-            <h3 className="font-serif text-2xl text-[var(--gold-bright)] mb-4">From the East</h3>
-            <ul className="space-y-3">
-              {FOUNDER_LINEAGE.east.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
-                  <span className="text-[var(--gold)] mt-1">—</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
+          <TiltCard className="rounded-2xl">
+            <ScrollReveal className="rounded-2xl border border-[var(--line)] p-8 h-full">
+              <h3 className="font-serif text-2xl text-[var(--violet-bright)] mb-4">From the West</h3>
+              <ul className="space-y-3">
+                {FOUNDER_LINEAGE.west.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
+                    <span className="text-[var(--violet)] mt-1">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </TiltCard>
+          <TiltCard className="rounded-2xl">
+            <ScrollReveal delay={0.1} className="rounded-2xl border border-[var(--line)] p-8 h-full">
+              <h3 className="font-serif text-2xl text-[var(--violet-bright)] mb-4">From the East</h3>
+              <ul className="space-y-3">
+                {FOUNDER_LINEAGE.east.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
+                    <span className="text-[var(--violet)] mt-1">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </TiltCard>
         </div>
 
         <ScrollReveal delay={0.15} className="mt-12 max-w-3xl mx-auto text-center">
@@ -45,21 +50,20 @@ export default function Founder() {
           <p className="mt-4 text-sm text-[var(--ink-faint)]">
             This training is built on both clinical licensure and NGH instructor certification.
           </p>
-          <Link href="/dr-maruti-sharma" className="mt-6 inline-block text-sm text-[var(--gold-bright)] hover:underline">
+          <Link href="/dr-maruti-sharma" className="mt-6 inline-block text-sm text-[var(--violet-bright)] hover:underline">
             Read Dr. Sharma&rsquo;s full profile →
           </Link>
         </ScrollReveal>
 
-        <div className="mt-14 flex flex-wrap justify-center gap-3">
+        <Stagger className="mt-14 flex flex-wrap justify-center gap-3" gap={0.03}>
           {CREDENTIAL_CHIPS.map((chip) => (
-            <span
-              key={chip}
-              className="rounded-full border border-[var(--line)] px-4 py-1.5 text-xs text-[var(--ink-faint)]"
-            >
-              {chip}
-            </span>
+            <StaggerItem key={chip}>
+              <span className="inline-block rounded-full border border-[var(--line)] px-4 py-1.5 text-xs text-[var(--ink-faint)] transition-colors hover:border-[var(--violet)] hover:text-[var(--violet-bright)]">
+                {chip}
+              </span>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

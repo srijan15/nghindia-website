@@ -19,16 +19,16 @@ export const CREDENTIAL_CHIPS = [
 ];
 
 export const STAT_TRIO = [
-  { value: "100+", label: "Countries" },
-  { value: "2000", label: "Hypnosis Since" },
-  { value: "F500", label: "Fortune 500 Clients" },
+  { num: 100, suffix: "+", label: "Countries" },
+  { num: 2000, suffix: "", label: "Hypnosis Since" },
+  { num: null, value: "F500", label: "Fortune 500 Clients" },
 ];
 
 export const MISSION_STATS = [
-  { value: "1950", label: "NGH Founded, USA" },
-  { value: "12,000+", label: "NGH Members / 105 Countries" },
-  { value: "2000", label: "In Practice Since" },
-  { value: "F500", label: "Fortune 500 Clients" },
+  { num: 1950, suffix: "", label: "NGH Founded, USA" },
+  { num: 12000, suffix: "+", label: "NGH Members / 105 Countries" },
+  { num: 2000, suffix: "", label: "In Practice Since" },
+  { num: null, value: "F500", label: "Fortune 500 Clients" },
 ];
 
 export const CERTIFICATION_FORMATS = [

@@ -20,7 +20,7 @@ export default function PortalPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] focus:outline-none focus:border-[var(--gold)]"
+                  className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] focus:outline-none focus:border-[var(--violet)]"
                 />
               </div>
               <div>
@@ -29,12 +29,12 @@ export default function PortalPage() {
                 </label>
                 <input
                   type="password"
-                  className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] focus:outline-none focus:border-[var(--gold)]"
+                  className="w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] focus:outline-none focus:border-[var(--violet)]"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full rounded-full bg-[var(--gold)] px-8 py-3 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+                className="w-full rounded-full bg-[var(--violet)] px-8 py-3 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
               >
                 Sign In
               </button>

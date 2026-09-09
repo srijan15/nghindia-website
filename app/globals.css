@@ -1,24 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0b0a08;
-  --bg-2: #121009;
-  --dark-3: #17140d;
-  --ink: #f3ede0;
-  --ink-dim: #c9c2b3;
-  --ink-faint: #8a8474;
-  --gold: #c9a84c;
-  --gold-bright: #e4c778;
-  --line: rgba(201, 168, 76, 0.16);
-  --line-strong: rgba(201, 168, 76, 0.32);
+  --bg: #09080f;
+  --bg-2: #0f0e1a;
+  --dark-3: #131120;
+  --ink: #f3f1fb;
+  --ink-dim: #c7c3dc;
+  --ink-faint: #8783a3;
+
+  --violet: #8b7bff;
+  --violet-bright: #ad9fff;
+  --coral: #ff8a7a;
+  --coral-bright: #ffab9e;
+
+  --line: rgba(139, 123, 255, 0.14);
+  --line-strong: rgba(139, 123, 255, 0.34);
+
+  --grad: linear-gradient(120deg, var(--violet-bright), #c9a0ff 45%, var(--coral) 100%);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-ink: var(--ink);
-  --color-gold: var(--gold);
-  --font-serif: var(--font-fraunces);
-  --font-sans: var(--font-grotesk);
+  --color-violet: var(--violet);
+  --color-coral: var(--coral);
+  --font-serif: var(--font-instrument);
+  --font-sans: var(--font-jakarta);
 }
 
 * {
@@ -33,19 +40,18 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
 }
 
 h1, h2, h3, h4, .font-serif {
-  font-family: var(--font-fraunces), "Georgia", serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-instrument), "Georgia", serif;
 }
 
 ::selection {
-  background: var(--gold);
-  color: #0b0a08;
+  background: var(--violet);
+  color: #09080f;
 }
 
 ::-webkit-scrollbar {
@@ -75,20 +81,36 @@ h1, h2, h3, h4, .font-serif {
     width: 6px;
     height: 6px;
     border-radius: 999px;
-    background: var(--gold-bright);
+    background: var(--coral-bright);
   }
   .cursor-ring {
     width: 34px;
     height: 34px;
     border-radius: 999px;
     border: 1px solid var(--line-strong);
-    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s cubic-bezier(.16,1,.3,1), height 0.3s cubic-bezier(.16,1,.3,1),
+      border-color 0.3s ease, background 0.3s ease;
   }
   .cursor-ring.is-active {
-    width: 64px;
-    height: 64px;
-    background: rgba(201, 168, 76, 0.08);
-    border-color: var(--gold);
+    width: 60px;
+    height: 60px;
+    background: rgba(139, 123, 255, 0.1);
+    border-color: var(--violet);
+  }
+  .cursor-ring .cursor-label {
+    opacity: 0;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--violet-bright);
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  .cursor-ring.is-active .cursor-label {
+    opacity: 1;
   }
   body {
     cursor: none;
@@ -106,8 +128,8 @@ h1, h2, h3, h4, .font-serif {
   background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
 }
 
-.text-gradient-gold {
-  background: linear-gradient(120deg, var(--gold-bright), var(--gold) 45%, #8a7233 90%);
+.text-gradient {
+  background: var(--grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -116,4 +138,20 @@ h1, h2, h3, h4, .font-serif {
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(3%, -4%) scale(1.06); }
+  66% { transform: translate(-4%, 3%) scale(0.96); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+  from { transform: translateX(-150%) skewX(-20deg); }
+  to { transform: translateX(250%) skewX(-20deg); }
 }

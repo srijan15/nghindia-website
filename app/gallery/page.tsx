@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
+import TiltCard from "@/components/TiltCard";
 
 export const metadata: Metadata = {
   title: "Gallery — NGH India",
@@ -23,9 +24,11 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {CAPTIONS.map((c, i) => (
             <ScrollReveal key={c} delay={i * 0.04}>
-              <div className="aspect-[4/3] rounded-2xl border border-[var(--line)] bg-[var(--dark-3)] flex items-end p-5 bg-[radial-gradient(circle_at_30%_20%,rgba(201,168,76,0.14),transparent_60%)]">
-                <p className="text-xs text-[var(--ink-faint)] italic">{c}</p>
-              </div>
+              <TiltCard className="rounded-2xl">
+                <div className="aspect-[4/3] rounded-2xl border border-[var(--line)] bg-[var(--dark-3)] flex items-end p-5 bg-[radial-gradient(circle_at_30%_20%,rgba(139,123,255,0.16),transparent_60%)]">
+                  <p className="text-xs text-[var(--ink-faint)] italic">{c}</p>
+                </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

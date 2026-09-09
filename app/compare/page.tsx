@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
+import TiltCard from "@/components/TiltCard";
+import MagneticButton from "@/components/MagneticButton";
 import { COMPARE_QUESTIONS, SITE_LINKS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -43,10 +45,12 @@ export default function ComparePage() {
         <div className="mx-auto max-w-4xl px-6 md:px-10 space-y-4">
           {COMPARE_QUESTIONS.map((item, i) => (
             <ScrollReveal key={item.q} delay={i * 0.04}>
-              <div className="rounded-xl border border-[var(--line)] p-6">
-                <p className="text-[var(--ink)] font-medium mb-2">{item.q}</p>
-                <p className="text-sm text-[var(--ink-dim)] leading-relaxed">{item.a}</p>
-              </div>
+              <TiltCard className="rounded-xl">
+                <div className="rounded-xl border border-[var(--line)] p-6">
+                  <p className="text-[var(--ink)] font-medium mb-2">{item.q}</p>
+                  <p className="text-sm text-[var(--ink-dim)] leading-relaxed">{item.a}</p>
+                </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>
@@ -70,7 +74,7 @@ export default function ComparePage() {
                     <th
                       key={c}
                       className={`text-left px-5 py-4 font-normal ${
-                        i === 0 ? "text-[var(--gold-bright)]" : "text-[var(--ink-faint)]"
+                        i === 0 ? "text-[var(--violet-bright)]" : "text-[var(--ink-faint)]"
                       }`}
                     >
                       {c}
@@ -82,7 +86,7 @@ export default function ComparePage() {
                 {TABLE_ROWS.map((row, i) => (
                   <tr key={row} className={i % 2 === 0 ? "" : "bg-[var(--bg)]/30"}>
                     <td className="px-5 py-3 text-[var(--ink-dim)]">{row}</td>
-                    <td className="px-5 py-3 text-[var(--gold-bright)]">Verified</td>
+                    <td className="px-5 py-3 text-[var(--violet-bright)]">Verified</td>
                     <td className="px-5 py-3 text-[var(--ink-faint)]">Varies</td>
                     <td className="px-5 py-3 text-[var(--ink-faint)]">Varies</td>
                     <td className="px-5 py-3 text-[var(--ink-faint)]">Varies</td>
@@ -105,7 +109,7 @@ export default function ComparePage() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[var(--line)] px-4 py-1.5 text-xs text-[var(--ink-faint)] hover:border-[var(--gold)] hover:text-[var(--gold-bright)] transition-colors"
+                  className="rounded-full border border-[var(--line)] px-4 py-1.5 text-xs text-[var(--ink-faint)] hover:border-[var(--violet)] hover:text-[var(--violet-bright)] transition-colors"
                 >
                   {s.label}
                 </a>
@@ -115,16 +119,11 @@ export default function ComparePage() {
         </div>
       </section>
 
-      <section className="py-16 text-center">
+      <section className="py-16 flex justify-center">
         <ScrollReveal>
-          <a
-            href={SITE_LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
-          >
+          <MagneticButton href={SITE_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" cursorLabel="Apply">
             Apply via WhatsApp
-          </a>
+          </MagneticButton>
         </ScrollReveal>
       </section>
     </>

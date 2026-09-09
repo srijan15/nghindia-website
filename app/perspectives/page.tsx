@@ -24,7 +24,7 @@ const ARTICLES = [
 ];
 
 const TAG_COLORS: Record<string, string> = {
-  Education: "text-[var(--gold-bright)]",
+  Education: "text-[var(--violet-bright)]",
   "Clinical Method": "text-emerald-300",
   Training: "text-sky-300",
   Philosophy: "text-violet-300",
@@ -45,7 +45,7 @@ export default function PerspectivesPage() {
             <ScrollReveal key={a.title} delay={i * 0.02}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 rounded-xl border border-[var(--line)] px-6 py-5 hover:border-[var(--line-strong)] transition-colors">
                 <div>
-                  <span className={`text-xs tracking-widest uppercase ${TAG_COLORS[a.tag] ?? "text-[var(--gold)]"}`}>
+                  <span className={`text-xs tracking-widest uppercase ${TAG_COLORS[a.tag] ?? "text-[var(--violet)]"}`}>
                     {a.tag}
                   </span>
                   <p className="text-[var(--ink)] mt-1">{a.title}</p>

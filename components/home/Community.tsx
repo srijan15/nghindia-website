@@ -2,6 +2,8 @@ import { COMMUNITY_ITEMS, SITE_LINKS } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
 import { Stagger, StaggerItem } from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
+import TiltCard from "@/components/TiltCard";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function Community() {
   return (
@@ -16,10 +18,12 @@ export default function Community() {
         <Stagger className="mt-16 grid md:grid-cols-3 gap-6">
           {COMMUNITY_ITEMS.map((item) => (
             <StaggerItem key={item.title}>
-              <div className="h-full rounded-2xl border border-[var(--line)] p-7 bg-[var(--bg)]/40">
-                <h3 className="font-serif text-xl text-[var(--gold-bright)] mb-2">{item.title}</h3>
-                <p className="text-sm text-[var(--ink-dim)] leading-relaxed">{item.body}</p>
-              </div>
+              <TiltCard className="h-full rounded-2xl">
+                <div className="h-full rounded-2xl border border-[var(--line)] p-7 bg-[var(--bg)]/40">
+                  <h3 className="font-serif text-xl text-[var(--violet-bright)] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[var(--ink-dim)] leading-relaxed">{item.body}</p>
+                </div>
+              </TiltCard>
             </StaggerItem>
           ))}
         </Stagger>
@@ -30,14 +34,17 @@ export default function Community() {
             first Sunday after certification → 100 extra supervised hours optionally available post-cert,
             arranged with a consenting Fellow, at no extra cost, logged separately, no additional certificate.
           </p>
-          <a
-            href={SITE_LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex rounded-full border border-[var(--gold)] px-7 py-3 text-sm text-[var(--gold-bright)] hover:bg-[var(--gold)] hover:text-[#0b0a08] transition-colors"
-          >
-            Apply for an Interview
-          </a>
+          <div className="mt-6 flex justify-center">
+            <MagneticButton
+              href={SITE_LINKS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              cursorLabel="Apply"
+            >
+              Apply for an Interview
+            </MagneticButton>
+          </div>
         </ScrollReveal>
       </div>
     </section>

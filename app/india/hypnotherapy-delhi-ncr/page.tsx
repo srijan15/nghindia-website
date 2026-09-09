@@ -21,7 +21,7 @@ export default function DelhiNCRPage() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
           >
             Apply for an Interview
           </a>

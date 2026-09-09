@@ -57,7 +57,7 @@ export default function DrMarutiSharma() {
               <ScrollReveal key={c.org} delay={0.05}>
                 <div className="rounded-xl border border-[var(--line)] p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                   <div>
-                    <span className="text-xs tracking-widest uppercase text-[var(--gold)]">{c.org}</span>
+                    <span className="text-xs tracking-widest uppercase text-[var(--violet)]">{c.org}</span>
                     <p className="text-[var(--ink)] mt-1">{c.body}</p>
                   </div>
                   <p className="text-xs text-[var(--ink-faint)]">{c.verify}</p>
@@ -75,22 +75,22 @@ export default function DrMarutiSharma() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-8">
             <ScrollReveal className="rounded-2xl border border-[var(--line)] p-8">
-              <h3 className="font-serif text-xl text-[var(--gold-bright)] mb-4">From the West</h3>
+              <h3 className="font-serif text-xl text-[var(--violet-bright)] mb-4">From the West</h3>
               <ul className="space-y-3">
                 {FOUNDER_LINEAGE.west.map((i) => (
                   <li key={i} className="text-sm text-[var(--ink-dim)] flex gap-2">
-                    <span className="text-[var(--gold)]">—</span>
+                    <span className="text-[var(--violet)]">—</span>
                     {i}
                   </li>
                 ))}
               </ul>
             </ScrollReveal>
             <ScrollReveal delay={0.1} className="rounded-2xl border border-[var(--line)] p-8">
-              <h3 className="font-serif text-xl text-[var(--gold-bright)] mb-4">From the East</h3>
+              <h3 className="font-serif text-xl text-[var(--violet-bright)] mb-4">From the East</h3>
               <ul className="space-y-3">
                 {FOUNDER_LINEAGE.east.map((i) => (
                   <li key={i} className="text-sm text-[var(--ink-dim)] flex gap-2">
-                    <span className="text-[var(--gold)]">—</span>
+                    <span className="text-[var(--violet)]">—</span>
                     {i}
                   </li>
                 ))}
@@ -108,7 +108,7 @@ export default function DrMarutiSharma() {
             </h2>
             <p>
               Founding president of NGH India, teaching the CCH in three formats. Clinical and executive
-              practice via <a href={SITE_LINKS.founder} className="text-[var(--gold-bright)] hover:underline">marutisharma.com</a>,
+              practice via <a href={SITE_LINKS.founder} className="text-[var(--violet-bright)] hover:underline">marutisharma.com</a>,
               working across 100+ countries with Fortune 500 clients, humanitarian leaders, surgeons, and
               executives. Retreats span the Himalayas to Europe.
             </p>
@@ -131,18 +131,18 @@ export default function DrMarutiSharma() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
           >
             Apply for an Interview
           </a>
           <p className="mt-4 text-sm text-[var(--ink-faint)]">
             Or write to{" "}
-            <a href={`mailto:${SITE_LINKS.email}`} className="text-[var(--gold-bright)] hover:underline">
+            <a href={`mailto:${SITE_LINKS.email}`} className="text-[var(--violet-bright)] hover:underline">
               {SITE_LINKS.email}
             </a>
           </p>
           <p className="mt-8 text-sm">
-            <Link href="/compare" className="text-[var(--gold-bright)] hover:underline">
+            <Link href="/compare" className="text-[var(--violet-bright)] hover:underline">
               See how this training compares →
             </Link>
           </p>

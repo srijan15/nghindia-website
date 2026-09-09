@@ -1,6 +1,7 @@
 import { INVESTMENT_INCLUDES, ENROLMENT_STEPS, SITE_LINKS } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
 import ScrollReveal, { Stagger, StaggerItem } from "@/components/ScrollReveal";
+import MagneticButton from "@/components/MagneticButton";
 import { Check } from "lucide-react";
 
 export default function Investment() {
@@ -17,8 +18,8 @@ export default function Investment() {
           <h3 className="font-serif text-2xl text-[var(--ink)] mb-6">What You Receive</h3>
           <Stagger className="grid md:grid-cols-2 gap-4">
             {INVESTMENT_INCLUDES.map((item) => (
-              <StaggerItem key={item} className="flex items-start gap-3">
-                <Check size={18} className="text-[var(--gold)] mt-0.5 shrink-0" />
+              <StaggerItem key={item} className="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1.5">
+                <Check size={18} className="text-[var(--violet)] mt-0.5 shrink-0" />
                 <span className="text-sm text-[var(--ink-dim)] leading-relaxed">{item}</span>
               </StaggerItem>
             ))}
@@ -26,12 +27,12 @@ export default function Investment() {
 
           <div className="mt-10 pt-10 border-t border-[var(--line)] grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <div className="font-serif text-4xl text-[var(--gold-bright)]">₹75,000 <span className="text-lg text-[var(--ink-faint)]">+ 18% GST</span></div>
+              <div className="font-serif text-4xl text-[var(--violet-bright)]">₹75,000 <span className="text-lg text-[var(--ink-faint)]">+ 18% GST</span></div>
               <p className="text-sm text-[var(--ink-faint)] mt-1">
                 Tuition · plus US$150 first-time NGH membership (paid to the Guild directly), renewing
                 annually at US$115–145 per ngh.net.
               </p>
-              <p className="text-sm text-[var(--gold-bright)] mt-3">No hidden certification ladder — one price, no upsell levels.</p>
+              <p className="text-sm text-[var(--violet-bright)] mt-3">No hidden certification ladder — one price, no upsell levels.</p>
             </div>
             <div className="text-sm text-[var(--ink-dim)] leading-relaxed">
               NGH India Fellowship Awards (merit/need-based) and payment plans are discussed at interview.
@@ -45,7 +46,7 @@ export default function Investment() {
           {ENROLMENT_STEPS.map((step) => (
             <ScrollReveal key={step.n} delay={0.05}>
               <div className="text-center">
-                <div className="font-serif text-4xl text-[var(--gold)] mb-3">{step.n}</div>
+                <div className="font-serif text-4xl text-[var(--violet)] mb-3">{step.n}</div>
                 <h4 className="text-[var(--ink)] font-medium mb-2">{step.title}</h4>
                 <p className="text-sm text-[var(--ink-faint)]">{step.body}</p>
               </div>
@@ -53,15 +54,10 @@ export default function Investment() {
           ))}
         </div>
 
-        <ScrollReveal className="mt-14 text-center">
-          <a
-            href={SITE_LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
-          >
+        <ScrollReveal className="mt-14 flex justify-center">
+          <MagneticButton href={SITE_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" cursorLabel="Apply">
             Apply for an Interview
-          </a>
+          </MagneticButton>
         </ScrollReveal>
       </div>
     </section>

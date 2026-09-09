@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-4">
               For any privacy-related request, write to{" "}
-              <a href={`mailto:${SITE_LINKS.email}`} className="text-[var(--gold-bright)] hover:underline">
+              <a href={`mailto:${SITE_LINKS.email}`} className="text-[var(--violet-bright)] hover:underline">
                 {SITE_LINKS.email}
               </a>
               .

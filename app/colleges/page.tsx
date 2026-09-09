@@ -45,7 +45,7 @@ export default function CollegesPage() {
             {OUTCOMES.map((o, i) => (
               <StaggerItem key={o}>
                 <div className="flex items-start gap-2 text-sm text-[var(--ink-dim)] rounded-lg border border-[var(--line)] p-4">
-                  <span className="text-[var(--gold)] font-serif">{"I II III IV V VI VII".split(" ")[i]}</span>
+                  <span className="text-[var(--violet)] font-serif">{"I II III IV V VI VII".split(" ")[i]}</span>
                   {o}
                 </div>
               </StaggerItem>
@@ -64,7 +64,7 @@ export default function CollegesPage() {
             {MODULES.map((m) => (
               <ScrollReveal key={m.n} delay={0.05}>
                 <div className="flex gap-5 rounded-xl border border-[var(--line)] p-6 bg-[var(--bg)]/40">
-                  <span className="font-serif text-2xl text-[var(--gold)] shrink-0">{m.n}</span>
+                  <span className="font-serif text-2xl text-[var(--violet)] shrink-0">{m.n}</span>
                   <div>
                     <h3 className="text-[var(--ink)] font-medium">{m.title}</h3>
                     <p className="text-sm text-[var(--ink-faint)] mt-1">{m.body}</p>
@@ -87,7 +87,7 @@ export default function CollegesPage() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
           >
             Enquire for Your Institution
           </a>

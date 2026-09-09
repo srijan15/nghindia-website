@@ -1,5 +1,5 @@
-import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import MagneticButton from "@/components/MagneticButton";
 
 export default function CompareTeaser() {
   return (
@@ -8,12 +8,11 @@ export default function CompareTeaser() {
         <ScrollReveal>
           <h2 className="font-serif text-2xl md:text-4xl text-[var(--ink)]">Comparing Training Providers in India?</h2>
           <p className="mt-4 text-[var(--ink-dim)]">We have nothing to hide.</p>
-          <Link
-            href="/compare"
-            className="mt-6 inline-flex rounded-full border border-[var(--gold)] px-7 py-3 text-sm text-[var(--gold-bright)] hover:bg-[var(--gold)] hover:text-[#0b0a08] transition-colors"
-          >
-            See the Full Comparison →
-          </Link>
+          <div className="mt-6 flex justify-center">
+            <MagneticButton href="/compare" variant="outline" cursorLabel="Compare">
+              See the Full Comparison →
+            </MagneticButton>
+          </div>
         </ScrollReveal>
       </div>
     </section>

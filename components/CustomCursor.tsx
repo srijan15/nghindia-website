@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [label, setLabel] = useState("");
 
   useEffect(() => {
     const dot = dotRef.current;
@@ -25,16 +26,19 @@ export default function CustomCursor() {
 
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, [role='button'], input, textarea")) {
+      const interactive = target.closest<HTMLElement>("a, button, [role='button'], input, textarea, select");
+      if (interactive) {
         ring.classList.add("is-active");
+        setLabel(interactive.dataset.cursor ?? "");
       } else {
         ring.classList.remove("is-active");
+        setLabel("");
       }
     };
 
     const tick = () => {
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
       ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
       raf = requestAnimationFrame(tick);
     };
@@ -53,7 +57,9 @@ export default function CustomCursor() {
   return (
     <>
       <div ref={dotRef} className="cursor-dot hidden md:block" />
-      <div ref={ringRef} className="cursor-ring hidden md:block" />
+      <div ref={ringRef} className="cursor-ring hidden md:block">
+        {label && <span className="cursor-label">{label}</span>}
+      </div>
     </>
   );
 }

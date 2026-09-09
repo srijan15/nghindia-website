@@ -48,13 +48,13 @@ export default function SyllabusPage() {
                   }`}
                 >
                   <span className="text-[var(--ink-dim)]">{row.component}</span>
-                  <span className="font-serif text-xl text-[var(--gold-bright)]">{row.hours} hrs</span>
+                  <span className="font-serif text-xl text-[var(--violet-bright)]">{row.hours} hrs</span>
                 </div>
               </ScrollReveal>
             ))}
             <div className="flex items-center justify-between px-6 py-4 bg-[var(--dark-3)]">
               <span className="text-[var(--ink)] font-medium">Total</span>
-              <span className="font-serif text-xl text-[var(--gold-bright)]">100 hrs</span>
+              <span className="font-serif text-xl text-[var(--violet-bright)]">100 hrs</span>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function SyllabusPage() {
             {SESSION_HIGHLIGHTS.map((row) => (
               <ScrollReveal key={row.s} delay={0.05}>
                 <div className="flex items-center gap-5 rounded-xl border border-[var(--line)] px-6 py-4 bg-[var(--bg)]/40">
-                  <span className="font-serif text-lg text-[var(--gold)] w-12 shrink-0">{row.s}</span>
+                  <span className="font-serif text-lg text-[var(--violet)] w-12 shrink-0">{row.s}</span>
                   <span className="text-[var(--ink-dim)] text-sm">{row.topic}</span>
                 </div>
               </ScrollReveal>
@@ -128,7 +128,7 @@ export default function SyllabusPage() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
           >
             Apply for an Interview
           </a>

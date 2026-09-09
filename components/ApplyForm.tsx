@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 
 const inputClass =
-  "w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] placeholder:text-[var(--ink-faint)] focus:outline-none focus:border-[var(--gold)] transition-colors";
+  "w-full rounded-lg border border-[var(--line)] bg-[var(--bg-2)] px-4 py-3 text-sm text-[var(--ink)] placeholder:text-[var(--ink-faint)] focus:outline-none focus:border-[var(--violet)] transition-colors";
 const labelClass = "block text-xs tracking-widest uppercase text-[var(--ink-faint)] mb-2";
 
 export default function ApplyForm() {
@@ -18,8 +18,8 @@ export default function ApplyForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-[var(--gold)] p-10 text-center">
-        <p className="font-serif text-2xl text-[var(--gold-bright)] mb-2">Thank you.</p>
+      <div className="rounded-2xl border border-[var(--violet)] p-10 text-center">
+        <p className="font-serif text-2xl text-[var(--violet-bright)] mb-2">Thank you.</p>
         <p className="text-sm text-[var(--ink-dim)]">
           Your application has reached Dr. Sharma&rsquo;s office. Expect a response within a few business days.
         </p>
@@ -32,7 +32,7 @@ export default function ApplyForm() {
       <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
       <div>
-        <h3 className="font-serif text-lg text-[var(--gold-bright)] mb-4">About You</h3>
+        <h3 className="font-serif text-lg text-[var(--violet-bright)] mb-4">About You</h3>
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
             <label className={labelClass}>First Name *</label>
@@ -66,7 +66,7 @@ export default function ApplyForm() {
       </div>
 
       <div>
-        <h3 className="font-serif text-lg text-[var(--gold-bright)] mb-4">Your Interest</h3>
+        <h3 className="font-serif text-lg text-[var(--violet-bright)] mb-4">Your Interest</h3>
         <div className="space-y-4">
           <div>
             <label className={labelClass}>Why do you want to learn hypnosis?</label>
@@ -101,20 +101,20 @@ export default function ApplyForm() {
       </div>
 
       <div>
-        <h3 className="font-serif text-lg text-[var(--gold-bright)] mb-4">Fellowship Award</h3>
+        <h3 className="font-serif text-lg text-[var(--violet-bright)] mb-4">Fellowship Award</h3>
         <div className="flex gap-6 text-sm text-[var(--ink-dim)]">
           <label className="flex items-center gap-2">
-            <input type="radio" name="fellowship" value="yes" className="accent-[var(--gold)]" /> Yes
+            <input type="radio" name="fellowship" value="yes" className="accent-[var(--violet)]" /> Yes
           </label>
           <label className="flex items-center gap-2">
-            <input type="radio" name="fellowship" value="no" defaultChecked className="accent-[var(--gold)]" /> No
+            <input type="radio" name="fellowship" value="no" defaultChecked className="accent-[var(--violet)]" /> No
           </label>
         </div>
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-full bg-[var(--gold)] px-8 py-3.5 text-sm font-medium text-[#0b0a08] hover:bg-[var(--gold-bright)] transition-colors"
+        className="w-full rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
       >
         Submit Application
       </button>
