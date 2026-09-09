@@ -49,7 +49,7 @@ export default function MagneticButton({
     "relative inline-flex items-center justify-center overflow-hidden rounded-full px-8 py-3.5 text-sm font-medium tracking-wide transition-colors";
   const styles =
     variant === "solid"
-      ? "text-[var(--bg)]"
+      ? "text-[var(--on-accent)]"
       : "border border-[var(--line-strong)] text-[var(--ink)] hover:border-[var(--violet)] hover:text-[var(--violet-bright)]";
 
   return (

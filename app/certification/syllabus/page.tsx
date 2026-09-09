@@ -128,7 +128,7 @@ export default function SyllabusPage() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
+            className="inline-flex rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--on-accent)] hover:bg-[var(--violet-bright)] transition-colors"
           >
             Apply for an Interview
           </a>

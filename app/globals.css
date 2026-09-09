@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #09080f;
-  --bg-2: #0f0e1a;
-  --dark-3: #131120;
-  --ink: #f3f1fb;
-  --ink-dim: #c7c3dc;
-  --ink-faint: #8783a3;
+  --bg: #fdfcfe;
+  --bg-2: #f5f1fc;
+  --dark-3: #eee5fb;
+  --ink: #1c1730;
+  --ink-dim: #5b5578;
+  --ink-faint: #8a84a3;
 
-  --violet: #8b7bff;
-  --violet-bright: #ad9fff;
-  --coral: #ff8a7a;
-  --coral-bright: #ffab9e;
+  --violet: #6d28d9;
+  --violet-bright: #7c3aed;
+  --coral: #fb7185;
+  --coral-bright: #e11d48;
 
-  --line: rgba(139, 123, 255, 0.14);
-  --line-strong: rgba(139, 123, 255, 0.34);
+  --on-accent: #1c1730;
 
-  --grad: linear-gradient(120deg, var(--violet-bright), #c9a0ff 45%, var(--coral) 100%);
+  --line: rgba(109, 40, 217, 0.14);
+  --line-strong: rgba(109, 40, 217, 0.28);
+
+  --grad: linear-gradient(120deg, var(--violet-bright), #a78bfa 45%, var(--coral) 100%);
 }
 
 @theme inline {
@@ -51,7 +53,7 @@ h1, h2, h3, h4, .font-serif {
 
 ::selection {
   background: var(--violet);
-  color: #09080f;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -97,7 +99,7 @@ h1, h2, h3, h4, .font-serif {
   .cursor-ring.is-active {
     width: 60px;
     height: 60px;
-    background: rgba(139, 123, 255, 0.1);
+    background: rgba(109, 40, 217, 0.08);
     border-color: var(--violet);
   }
   .cursor-ring .cursor-label {

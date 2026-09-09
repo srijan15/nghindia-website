@@ -8,7 +8,7 @@ export default function FinalCTA() {
   return (
     <section className="relative py-28 md:py-36 overflow-hidden">
       <Parallax speed={0.15} className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(139,123,255,0.18),_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(109,40,217,0.18),_transparent_60%)]" />
       </Parallax>
       <div className="mx-auto max-w-3xl px-6 md:px-10 text-center">
         <h2 className="font-serif text-4xl md:text-6xl text-[var(--ink)] leading-tight">

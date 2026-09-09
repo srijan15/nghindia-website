@@ -34,7 +34,7 @@ export default function PortalPage() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-full bg-[var(--violet)] px-8 py-3 text-sm font-medium text-[var(--bg)] hover:bg-[var(--violet-bright)] transition-colors"
+                className="w-full rounded-full bg-[var(--violet)] px-8 py-3 text-sm font-medium text-[var(--on-accent)] hover:bg-[var(--violet-bright)] transition-colors"
               >
                 Sign In
               </button>

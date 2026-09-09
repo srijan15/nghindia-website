@@ -25,7 +25,7 @@ export default function GalleryPage() {
           {CAPTIONS.map((c, i) => (
             <ScrollReveal key={c} delay={i * 0.04}>
               <TiltCard className="rounded-2xl">
-                <div className="aspect-[4/3] rounded-2xl border border-[var(--line)] bg-[var(--dark-3)] flex items-end p-5 bg-[radial-gradient(circle_at_30%_20%,rgba(139,123,255,0.16),transparent_60%)]">
+                <div className="aspect-[4/3] rounded-2xl border border-[var(--line)] bg-[var(--dark-3)] flex items-end p-5 bg-[radial-gradient(circle_at_30%_20%,rgba(109,40,217,0.16),transparent_60%)]">
                   <p className="text-xs text-[var(--ink-faint)] italic">{c}</p>
                 </div>
               </TiltCard>
