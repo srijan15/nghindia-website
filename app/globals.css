@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0a08;
+  --bg-2: #121009;
+  --dark-3: #17140d;
+  --ink: #f3ede0;
+  --ink-dim: #c9c2b3;
+  --ink-faint: #8a8474;
+  --gold: #c9a84c;
+  --gold-bright: #e4c778;
+  --line: rgba(201, 168, 76, 0.16);
+  --line-strong: rgba(201, 168, 76, 0.32);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-fraunces), "Georgia", serif;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0b0a08;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+}
+
+/* Custom cursor — desktop only, fine pointers */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+    will-change: transform;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--gold-bright);
+  }
+  .cursor-ring {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .cursor-ring.is-active {
+    width: 64px;
+    height: 64px;
+    background: rgba(201, 168, 76, 0.08);
+    border-color: var(--gold);
+  }
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--gold-bright), var(--gold) 45%, #8a7233 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }
