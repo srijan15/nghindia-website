@@ -10,14 +10,27 @@ export default function Founder() {
   return (
     <section id="dr-sharma" className="py-24 md:py-32 border-b border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="flex flex-col md:flex-row md:items-end gap-10">
-          <div className="flex-1">
-            <SectionHeading
-              eyebrow="The Instructor"
-              title="In Practice Since 2000. A Lifetime Devoted to the Transformation Arts."
-            />
-          </div>
-          <ScrollReveal delay={0.1} className="shrink-0 self-center md:self-end">
+        <SectionHeading
+          eyebrow="The Instructor"
+          title="In Practice Since 2000. A Lifetime Devoted to the Transformation Arts."
+        />
+
+        <div className="mt-16 grid md:grid-cols-[1fr_auto_1fr] gap-10 items-center">
+          <TiltCard className="rounded-2xl">
+            <ScrollReveal className="rounded-2xl border border-[var(--line)] p-8 h-full">
+              <h3 className="font-serif text-2xl text-[var(--violet-bright)] mb-4">From the East</h3>
+              <ul className="space-y-3">
+                {FOUNDER_LINEAGE.east.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
+                    <span className="text-[var(--violet)] mt-1">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </TiltCard>
+
+          <ScrollReveal delay={0.05} className="mx-auto shrink-0">
             <div className="relative h-56 w-40 md:h-64 md:w-48 overflow-hidden rounded-2xl border border-[var(--line)]">
               <Image
                 src="/images/dr-maruti-sharma.webp"
@@ -27,27 +40,12 @@ export default function Founder() {
               />
             </div>
           </ScrollReveal>
-        </div>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-10">
           <TiltCard className="rounded-2xl">
-            <ScrollReveal className="rounded-2xl border border-[var(--line)] p-8 h-full">
+            <ScrollReveal delay={0.1} className="rounded-2xl border border-[var(--line)] p-8 h-full">
               <h3 className="font-serif text-2xl text-[var(--violet-bright)] mb-4">From the West</h3>
               <ul className="space-y-3">
                 {FOUNDER_LINEAGE.west.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
-                    <span className="text-[var(--violet)] mt-1">—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-          </TiltCard>
-          <TiltCard className="rounded-2xl">
-            <ScrollReveal delay={0.1} className="rounded-2xl border border-[var(--line)] p-8 h-full">
-              <h3 className="font-serif text-2xl text-[var(--violet-bright)] mb-4">From the East</h3>
-              <ul className="space-y-3">
-                {FOUNDER_LINEAGE.east.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-[var(--ink-dim)]">
                     <span className="text-[var(--violet)] mt-1">—</span>
                     {item}

@@ -35,18 +35,25 @@ export default function Hero() {
       id="home"
       ref={ref}
       onMouseMove={onMouseMove}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative isolate min-h-screen flex items-center overflow-hidden"
     >
-      <div className="absolute inset-0 -z-40">
-        <Image
-          src="/images/hero-bg.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-25"
-        />
-        <div className="absolute inset-0 bg-[var(--bg)]/70" />
-      </div>
+      <div
+        className="absolute inset-0 -z-40"
+        style={{
+          backgroundImage: "url(/images/hero-bg.webp)",
+          backgroundSize: "cover",
+          backgroundPosition: "50% 20%",
+          opacity: 0.4,
+        }}
+      />
+      <div
+        className="absolute inset-0 -z-40"
+        style={{ background: "linear-gradient(180deg, var(--bg) 0%, transparent 25%, transparent 55%, var(--bg) 92%)" }}
+      />
+      <div
+        className="absolute inset-0 -z-40"
+        style={{ background: "radial-gradient(ellipse at center, transparent 15%, var(--bg) 82%)" }}
+      />
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <motion.div
           style={{ x: blob1X, y: blob1Y }}
