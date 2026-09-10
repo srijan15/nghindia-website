@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   title: "NGH Hypnotherapy Certification in India | Dr. Maruti Sharma",
   description:
     "NGH Consulting Hypnotist certification in India by Dr. Maruti Sharma, RCI-registered Clinical Psychologist (Assoc.). Online, in person, or retreat.",
+  openGraph: {
+    images: ["/images/og-nghindia.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-nghindia.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

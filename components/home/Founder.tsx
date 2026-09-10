@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FOUNDER_LINEAGE } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
@@ -9,10 +10,24 @@ export default function Founder() {
   return (
     <section id="dr-sharma" className="py-24 md:py-32 border-b border-[var(--line)]">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <SectionHeading
-          eyebrow="The Instructor"
-          title="In Practice Since 2000. A Lifetime Devoted to the Transformation Arts."
-        />
+        <div className="flex flex-col md:flex-row md:items-end gap-10">
+          <div className="flex-1">
+            <SectionHeading
+              eyebrow="The Instructor"
+              title="In Practice Since 2000. A Lifetime Devoted to the Transformation Arts."
+            />
+          </div>
+          <ScrollReveal delay={0.1} className="shrink-0 self-center md:self-end">
+            <div className="relative h-56 w-40 md:h-64 md:w-48 overflow-hidden rounded-2xl border border-[var(--line)]">
+              <Image
+                src="/images/dr-maruti-sharma.webp"
+                alt="Dr. Maruti Sharma"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
 
         <div className="mt-16 grid md:grid-cols-2 gap-10">
           <TiltCard className="rounded-2xl">

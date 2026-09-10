@@ -139,6 +139,7 @@ export const TESTIMONIALS = [
       "I came in sceptical of hypnotherapy as a discipline. I left with a documented, supervised skillset I use weekly.",
     name: "Dr. Akanksha Mangotra",
     role: "CCH Graduate, Medanta Medicity, Gurugram",
+    photo: "/images/dr-akanksha-mangotra-tile.webp",
   },
   {
     quote:

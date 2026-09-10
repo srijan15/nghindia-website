@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import { STAT_TRIO, SITE_LINKS } from "@/lib/content";
 import RevealText from "@/components/RevealText";
@@ -36,6 +37,16 @@ export default function Hero() {
       onMouseMove={onMouseMove}
       className="relative min-h-screen flex items-center overflow-hidden"
     >
+      <div className="absolute inset-0 -z-40">
+        <Image
+          src="/images/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-[var(--bg)]/70" />
+      </div>
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <motion.div
           style={{ x: blob1X, y: blob1Y }}
@@ -138,14 +149,23 @@ export default function Hero() {
           </MagneticButton>
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.4 }}
-          className="mt-8 text-xs tracking-wide text-[var(--ink-faint)] italic"
+          className="mt-8 flex items-center justify-center gap-3"
         >
-          Dr. Maruti Sharma with Don Mottin, Vice President · NGH, Boston USA
-        </motion.p>
+          <Image
+            src="/images/dr-maruti-sharma.webp"
+            alt="Dr. Maruti Sharma"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full object-cover border border-[var(--line-strong)]"
+          />
+          <p className="text-xs tracking-wide text-[var(--ink-faint)] italic">
+            Dr. Maruti Sharma with Don Mottin, Vice President · NGH, Boston USA
+          </p>
+        </motion.div>
       </motion.div>
 
       <motion.div

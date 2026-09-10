@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { COMMUNITY_ITEMS, SITE_LINKS } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
 import { Stagger, StaggerItem } from "@/components/ScrollReveal";
@@ -14,6 +15,15 @@ export default function Community() {
           title="The NGH India Chapter & Community"
           intro="On certification you join a room — a monthly chapter meet, first Sunday of every month, with Fellows signing in from six countries: India, UAE, US, Canada, Sweden, Switzerland."
         />
+
+        <ScrollReveal delay={0.05} className="mt-12 relative h-64 md:h-96 rounded-2xl overflow-hidden border border-[var(--line)]">
+          <Image
+            src="/images/cohort-group.webp"
+            alt="NGH India Fellows at a chapter meet"
+            fill
+            className="object-cover"
+          />
+        </ScrollReveal>
 
         <Stagger className="mt-16 grid md:grid-cols-3 gap-6">
           {COMMUNITY_ITEMS.map((item) => (
