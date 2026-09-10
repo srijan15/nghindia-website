@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { FOUNDER_LINEAGE, CREDENTIAL_CHIPS } from "@/lib/content";
+import { FOUNDER_LINEAGE } from "@/lib/content";
 import SectionHeading from "@/components/SectionHeading";
-import ScrollReveal, { Stagger, StaggerItem } from "@/components/ScrollReveal";
+import ScrollReveal from "@/components/ScrollReveal";
 import TiltCard from "@/components/TiltCard";
+import OrbitingCredentials from "@/components/OrbitingCredentials";
 
 export default function Founder() {
   return (
@@ -55,15 +56,9 @@ export default function Founder() {
           </Link>
         </ScrollReveal>
 
-        <Stagger className="mt-14 flex flex-wrap justify-center gap-3" gap={0.03}>
-          {CREDENTIAL_CHIPS.map((chip) => (
-            <StaggerItem key={chip}>
-              <span className="inline-block rounded-full border border-[var(--line)] px-4 py-1.5 text-xs text-[var(--ink-faint)] transition-colors hover:border-[var(--violet)] hover:text-[var(--violet-bright)]">
-                {chip}
-              </span>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        <div className="mt-8">
+          <OrbitingCredentials />
+        </div>
       </div>
     </section>
   );

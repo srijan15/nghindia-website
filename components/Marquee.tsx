@@ -10,11 +10,11 @@ export default function Marquee() {
         WebkitMaskImage: "linear-gradient(90deg, transparent, black 8%, black 92%, transparent)",
       }}
     >
-      <div className="flex w-max animate-[marquee_38s_linear_infinite] gap-10 group-hover:[animation-play-state:paused]">
+      <div className="flex w-max animate-[marquee_38s_linear_infinite] gap-12 py-1 group-hover:[animation-play-state:paused]">
         {items.map((chip, i) => (
           <span
             key={i}
-            className="flex items-center gap-3 text-sm tracking-wide text-[var(--ink-faint)] whitespace-nowrap transition-colors hover:text-[var(--violet-bright)]"
+            className="flex items-center gap-3 text-base md:text-lg font-medium tracking-wide text-[var(--ink)] whitespace-nowrap transition-colors hover:text-[var(--violet)]"
           >
             <span className="text-[var(--violet)]">◆</span>
             {chip}

@@ -18,6 +18,17 @@ export const CREDENTIAL_CHIPS = [
   "MTP™ Method Originator",
 ];
 
+export const ORBIT_CREDENTIALS = [
+  { icon: "award", label: "NGH USA, Est. 1950" },
+  { icon: "badge-check", label: "RCI-Registered" },
+  { icon: "graduation-cap", label: "PhD, Buddhist Psych." },
+  { icon: "trophy", label: "IBCH Certified" },
+  { icon: "brain", label: "NLP Founders' Lineage" },
+  { icon: "flower-2", label: "Yoga Alliance Intl." },
+  { icon: "building-2", label: "Fortune 500 Experience" },
+  { icon: "sparkles", label: "MTP™ Originator" },
+] as const;
+
 export const STAT_TRIO = [
   { num: 100, suffix: "+", label: "Countries" },
   { num: 2000, suffix: "", label: "Hypnosis Since" },
