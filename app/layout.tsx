@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Instrument_Serif, Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import PageTransition from "@/components/PageTransition";
+import { cn } from "@/lib/utils";
+import { FloatingTooltipProvider } from "@/components/floating-tooltip";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const instrument = Instrument_Serif({
   variable: "--font-instrument",
@@ -36,15 +40,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${instrument.variable} ${jakarta.variable} h-full`}>
+    <html lang="en" className={cn("h-full", instrument.variable, jakarta.variable, "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col bg-[var(--bg)]">
-        <ScrollProgress />
-        <CustomCursor />
-        <Nav />
-        <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <Footer />
+        <FloatingTooltipProvider size="md" className="bg-[var(--ink)] text-[var(--bg)] shadow-lg">
+          <ScrollProgress />
+          <CustomCursor />
+          <Nav />
+          <main className="flex-1">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <Footer />
+        </FloatingTooltipProvider>
       </body>
     </html>
   );

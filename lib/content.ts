@@ -30,9 +30,24 @@ export const ORBIT_CREDENTIALS = [
 ] as const;
 
 export const STAT_TRIO = [
-  { num: 100, suffix: "+", label: "Countries" },
-  { num: 2000, suffix: "", label: "Hypnosis Since" },
-  { num: null, value: "F500", label: "Fortune 500 Clients" },
+  {
+    num: 100,
+    suffix: "+",
+    label: "Countries",
+    detail: "NGH has members and certified practitioners across 105+ countries worldwide.",
+  },
+  {
+    num: 2000,
+    suffix: "",
+    label: "Hypnosis Since",
+    detail: "Dr. Sharma has practised hypnotherapy professionally since the year 2000.",
+  },
+  {
+    num: null,
+    value: "F500",
+    label: "Fortune 500 Clients",
+    detail: "Executives and teams from Fortune 500 companies have trained under this programme.",
+  },
 ];
 
 export const MISSION_STATS = [

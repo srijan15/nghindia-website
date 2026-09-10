@@ -7,6 +7,7 @@ import { STAT_TRIO, SITE_LINKS } from "@/lib/content";
 import RevealText from "@/components/RevealText";
 import MagneticButton from "@/components/MagneticButton";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import { FloatingTooltipTrigger } from "@/components/floating-tooltip";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -123,12 +124,14 @@ export default function Hero() {
           className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-4"
         >
           {STAT_TRIO.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="font-serif text-2xl md:text-3xl text-[var(--violet-bright)]">
-                {s.num !== null ? <AnimatedCounter value={s.num} suffix={s.suffix} /> : s.value}
+            <FloatingTooltipTrigger key={s.label} content={s.label} description={s.detail}>
+              <div className="text-center cursor-default">
+                <div className="font-serif text-2xl md:text-3xl text-[var(--violet-bright)]">
+                  {s.num !== null ? <AnimatedCounter value={s.num} suffix={s.suffix} /> : s.value}
+                </div>
+                <div className="text-xs tracking-widest uppercase text-[var(--ink-faint)] mt-1">{s.label}</div>
               </div>
-              <div className="text-xs tracking-widest uppercase text-[var(--ink-faint)] mt-1">{s.label}</div>
-            </div>
+            </FloatingTooltipTrigger>
           ))}
         </motion.div>
 
