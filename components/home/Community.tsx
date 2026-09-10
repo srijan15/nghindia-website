@@ -8,7 +8,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function Community() {
   return (
-    <section className="py-16 md:py-20" style={{ background: "var(--dark-3)" }}>
+    <section id="community" className="py-24 md:py-32 border-b border-[var(--line)] scroll-mt-20" style={{ background: "var(--dark-3)" }}>
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <SectionHeading
           eyebrow="After Certification"
