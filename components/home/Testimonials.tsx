@@ -6,7 +6,7 @@ import TiltCard from "@/components/TiltCard";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 md:py-32 border-b border-[var(--line)] overflow-hidden" style={{ background: "var(--dark-3)" }}>
+    <section className="relative py-16 md:py-20 overflow-hidden" style={{ background: "var(--dark-3)" }}>
       <Image
         src="/images/cohort-moment-bg.webp"
         alt=""

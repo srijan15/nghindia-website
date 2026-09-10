@@ -11,7 +11,7 @@ export default function PageHero({
   intro?: string;
 }) {
   return (
-    <section className="relative pt-40 pb-20 md:pt-48 md:pb-24 border-b border-[var(--line)] overflow-hidden">
+    <section className="relative isolate pt-40 pb-20 md:pt-48 md:pb-24 border-b border-[var(--line)] overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_rgba(109,40,217,0.16),_transparent_55%)]" />
       <div className="mx-auto max-w-4xl px-6 md:px-10 text-center">
         <ScrollReveal>

@@ -6,7 +6,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-28 md:py-36 overflow-hidden">
+    <section className="relative isolate py-28 md:py-36 overflow-hidden">
       <Parallax speed={0.15} className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(109,40,217,0.18),_transparent_60%)]" />
       </Parallax>

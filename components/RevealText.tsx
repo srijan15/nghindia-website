@@ -23,7 +23,7 @@ export default function RevealText({
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden align-bottom">
           <motion.span
-            className="inline-block"
+            className={`inline-block ${className}`}
             initial={{ y: "110%", rotate: 4 }}
             whileInView={{ y: "0%", rotate: 0 }}
             viewport={{ once: true, margin: "-10% 0px -10% 0px" }}

@@ -7,7 +7,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function Certification() {
   return (
-    <section id="certification" className="py-24 md:py-32 border-b border-[var(--line)]">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <SectionHeading
           eyebrow="The Credential"

@@ -11,7 +11,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 md:py-32 border-b border-[var(--line)]" style={{ background: "var(--bg-2)" }}>
+    <section className="py-16 md:py-20" style={{ background: "var(--bg-2)" }}>
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <SectionHeading eyebrow="Questions" title="Frequently Asked" />
 

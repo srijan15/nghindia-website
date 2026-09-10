@@ -8,7 +8,7 @@ import OrbitingCredentials from "@/components/OrbitingCredentials";
 
 export default function Founder() {
   return (
-    <section id="dr-sharma" className="py-24 md:py-32 border-b border-[var(--line)]">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <SectionHeading
           eyebrow="The Instructor"

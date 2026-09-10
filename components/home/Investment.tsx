@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 
 export default function Investment() {
   return (
-    <section id="investment" className="relative py-24 md:py-32 border-b border-[var(--line)]" style={{ background: "var(--dark-3)" }}>
+    <section className="relative py-16 md:py-20" style={{ background: "var(--dark-3)" }}>
       <div className="mx-auto max-w-5xl px-6 md:px-10">
         <SectionHeading
           eyebrow="The Investment"

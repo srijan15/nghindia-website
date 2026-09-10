@@ -4,7 +4,7 @@ import RevealText from "@/components/RevealText";
 
 export default function CaseNotes() {
   return (
-    <section id="record" className="py-24 md:py-32 border-b border-[var(--line)]">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-4xl px-6 md:px-10 text-center">
         <ScrollReveal>
           <p className="text-xs tracking-[0.3em] uppercase text-[var(--violet-bright)] mb-4">Case Notes</p>

@@ -43,16 +43,16 @@ export default function Hero() {
           backgroundImage: "url(/images/hero-bg.webp)",
           backgroundSize: "cover",
           backgroundPosition: "50% 20%",
-          opacity: 0.4,
+          opacity: 0.16,
         }}
       />
       <div
         className="absolute inset-0 -z-40"
-        style={{ background: "linear-gradient(180deg, var(--bg) 0%, transparent 25%, transparent 55%, var(--bg) 92%)" }}
+        style={{ background: "linear-gradient(180deg, var(--bg) 0%, transparent 30%, transparent 50%, var(--bg) 90%)" }}
       />
       <div
         className="absolute inset-0 -z-40"
-        style={{ background: "radial-gradient(ellipse at center, transparent 15%, var(--bg) 82%)" }}
+        style={{ background: "radial-gradient(ellipse at center, transparent 10%, var(--bg) 75%)" }}
       />
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <motion.div

@@ -3,7 +3,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 export default function CompareTeaser() {
   return (
-    <section id="compare" className="py-20 border-b border-[var(--line)]">
+    <section className="py-14 md:py-16">
       <div className="mx-auto max-w-4xl px-6 md:px-10 text-center">
         <ScrollReveal>
           <h2 className="font-serif text-2xl md:text-4xl text-[var(--ink)]">Comparing Training Providers in India?</h2>
