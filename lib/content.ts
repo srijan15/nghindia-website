@@ -257,6 +257,85 @@ export const COMPARE_QUESTIONS = [
   },
 ];
 
+export const PERSPECTIVES = [
+  {
+    slug: "clinical-hypnotherapy-india-gcc-evidence",
+    title: "Clinical Hypnotherapy in India and the GCC: What the Evidence Actually Supports",
+    tag: "Education",
+    date: "22 Aug 2026",
+  },
+  {
+    slug: "mtp-method-what-it-is",
+    title: "The MTP™ Method: What It Is and How It Works",
+    tag: "Clinical Method",
+    date: "16 Apr 2026",
+  },
+  {
+    slug: "mtp-method-methodology",
+    title: "The MTP™ Method — Methodology",
+    tag: "Training",
+    date: "26 Mar 2026",
+  },
+  {
+    slug: "mtp-method-clinical-framework",
+    title: "The MTP™ Method: A Clinical Framework for Meditation, Trance, and Psychotherapy",
+    tag: "Philosophy",
+    date: "10 Feb 2026",
+  },
+  {
+    slug: "what-is-clinical-hypnotherapy",
+    title: "What Is Clinical Hypnotherapy? Evidence, Process, and What to Expect",
+    tag: "Education",
+    date: "15 Jan 2026",
+  },
+  {
+    slug: "eastern-lineage-of-hypnosis",
+    title: "The Eastern Lineage of Hypnosis — Sammohan Vidya, the Atharva Veda, and the Tantric Tradition",
+    tag: "Philosophy",
+    date: "16 Mar 2026",
+  },
+  {
+    slug: "ngh-certification-india-official-chapter",
+    title: "NGH Certification India — The Official Chapter",
+    tag: "Training",
+  },
+  {
+    slug: "rci-clinical-psychologist-vs-hypnotherapy-credential",
+    title: "RCI-Registered Clinical Psychologist (Assoc.) and Hypnotherapy — The Credential Distinction",
+    tag: "Education",
+  },
+  {
+    slug: "is-ngh-certification-recognised-in-india",
+    title: "Is the NGH Certification Recognised in India?",
+    tag: "Education",
+  },
+  {
+    slug: "hypnotherapy-for-anxiety-clinical-trials",
+    title: "Hypnotherapy for Anxiety: What 261 Clinical Trials Actually Show",
+    tag: "Education",
+  },
+  {
+    slug: "hypnotherapy-for-ibs-nice-recommended",
+    title: "Hypnotherapy for IBS: The NICE-Recommended Treatment Indian Doctors Don't Know About",
+    tag: "Education",
+  },
+  {
+    slug: "cch-vs-diploma-comparing-qualifications",
+    title: "CCH vs Diploma: Comparing Hypnotherapy Qualifications in India",
+    tag: "Training",
+  },
+  {
+    slug: "can-a-doctor-or-psychologist-add-hypnotherapy",
+    title: "Can a Doctor or Psychologist Add Hypnotherapy to Their Practice in India?",
+    tag: "Training",
+  },
+  {
+    slug: "what-is-mtp-method-and-why-part-of-training",
+    title: "What Is the MTP™ Method — and Why It's Part of NGH India Training",
+    tag: "Philosophy",
+  },
+];
+
 export const SITE_LINKS = {
   whatsapp: "https://wa.me/919910120812",
   email: "cch@nghindia.com",
