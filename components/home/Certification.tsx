@@ -25,8 +25,8 @@ export default function Certification() {
           intro="Issued by the National Guild of Hypnotists — 12,000+ members, 105 countries, issued since 1950. Three formats. One credential. The rigour is identical across all of them."
         />
 
-        {/* Connecting track: draws in on scroll, ties the three formats together as one journey */}
-        <div className="relative mt-16 hidden md:block h-px mx-[16.6%]">
+        {/* Connecting track: draws in on scroll, with a dot travelling along it on loop */}
+        <div className="relative mt-16 mb-10 hidden md:block h-px mx-[16.6%]">
           <div className="absolute inset-0 bg-[var(--line)]" />
           <motion.div
             className="absolute inset-y-0 left-0 origin-left"
@@ -36,9 +36,15 @@ export default function Certification() {
             viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           />
+          <motion.div
+            className="absolute top-1/2 h-2 w-2 rounded-full -translate-y-1/2"
+            style={{ background: "var(--violet-bright)", boxShadow: "0 0 12px 2px var(--violet-bright)" }}
+            animate={{ left: ["0%", "100%"] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", repeatType: "loop", delay: 1.4 }}
+          />
         </div>
 
-        <Stagger className="mt-8 md:-mt-3 grid md:grid-cols-3 gap-6">
+        <Stagger className="mt-8 md:mt-0 grid md:grid-cols-3 gap-6">
           {CERTIFICATION_FORMATS.map((f, i) => {
             const Icon = ICONS[f.title] ?? Laptop;
             return (
@@ -49,9 +55,18 @@ export default function Certification() {
                     transition={{ type: "spring", stiffness: 300, damping: 22 }}
                     className="relative h-full overflow-hidden rounded-2xl border border-[var(--line)] p-8 bg-[var(--bg-2)]/40 group-hover:border-[var(--line-strong)] group-hover:bg-[var(--bg-2)] transition-colors"
                   >
+                    {/* Ambient shimmer sweep, always running — not just on hover/scroll */}
+                    <motion.div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-y-0 w-1/3 -skew-x-12"
+                      style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)" }}
+                      animate={{ left: ["-40%", "140%"] }}
+                      transition={{ duration: 4.5, repeat: Infinity, ease: "linear", delay: i * 1.2 }}
+                    />
+
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute -top-6 -right-2 font-serif text-8xl text-[var(--violet)]/10 select-none"
+                      className="pointer-events-none absolute top-3 right-4 font-serif text-6xl text-[var(--violet)]/10 select-none"
                     >
                       0{i + 1}
                     </span>
