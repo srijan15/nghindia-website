@@ -8,12 +8,18 @@ import { Stagger, StaggerItem } from "@/components/ScrollReveal";
 import ScrollReveal from "@/components/ScrollReveal";
 import TiltCard from "@/components/TiltCard";
 import MagneticButton from "@/components/MagneticButton";
+import { HorizontalMarquee } from "@/components/horizontal-marquee";
 
 const ICONS: Record<string, typeof Laptop> = {
   Online: Laptop,
   "In Person": MapPin,
   "Residential Retreat": Mountain,
 };
+
+const FACT_ROWS = [
+  ["12,000+ NGH Members", "105 Countries", "Est. 1950", "100-Hour Curriculum", "NGH Exam Included", "Rolling Enrolment", "Interview-Based Admission"],
+  ["Live Supervised Practice", "Peer Practice via Video", "Session Recordings", "Delhi NCR & Dubai", "Premium In-Person Venue", "McLeodganj Retreat", "Annual Chapter Meet"],
+];
 
 export default function Certification() {
   return (
@@ -24,6 +30,10 @@ export default function Certification() {
           title="NGH Consulting Hypnotist Certification (CCH)"
           intro="Issued by the National Guild of Hypnotists — 12,000+ members, 105 countries, issued since 1950. Three formats. One credential. The rigour is identical across all of them."
         />
+
+        <ScrollReveal delay={0.1} className="mt-10">
+          <HorizontalMarquee rows={FACT_ROWS} speed={28} gap={10} fadeSize={60} />
+        </ScrollReveal>
 
         {/* Connecting track: draws in on scroll, with a dot travelling along it on loop */}
         <div className="relative mt-16 mb-10 hidden md:block h-px mx-[16.6%]">
