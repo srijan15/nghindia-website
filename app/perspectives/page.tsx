@@ -13,6 +13,7 @@ const TAG_COLORS: Record<string, string> = {
   "Clinical Method": "text-emerald-300",
   Training: "text-sky-300",
   Philosophy: "text-violet-300",
+  Evidence: "text-rose-300",
 };
 
 export default function PerspectivesPage() {
@@ -21,7 +22,7 @@ export default function PerspectivesPage() {
       <PageHero
         eyebrow="Knowledge Centre"
         title="Perspectives"
-        intro="Fourteen articles on the evidence, method, and lineage behind clinical hypnotherapy."
+        intro={`${PERSPECTIVES.length} articles on the evidence, method, and lineage behind clinical hypnotherapy.`}
       />
 
       <section className="py-20">
@@ -29,7 +30,7 @@ export default function PerspectivesPage() {
           {PERSPECTIVES.map((a, i) => (
             <ScrollReveal key={a.slug} delay={i * 0.02}>
               <Link
-                href={`/perspectives/${a.slug}`}
+                href={a.href ?? `/perspectives/${a.slug}`}
                 className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 rounded-xl border border-[var(--line)] px-6 py-5 hover:border-[var(--violet)] transition-colors"
               >
                 <div>

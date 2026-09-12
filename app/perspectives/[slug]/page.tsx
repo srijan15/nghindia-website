@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import MagneticButton from "@/components/MagneticButton";
 import { PERSPECTIVES, SITE_LINKS } from "@/lib/content";
 
 export function generateStaticParams() {
-  return PERSPECTIVES.map((a) => ({ slug: a.slug }));
+  return PERSPECTIVES.filter((a) => !a.href).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -20,6 +20,7 @@ export default async function PerspectiveArticle({ params }: { params: Promise<{
   const { slug } = await params;
   const article = PERSPECTIVES.find((a) => a.slug === slug);
   if (!article) notFound();
+  if (article.href) redirect(article.href);
 
   return (
     <>

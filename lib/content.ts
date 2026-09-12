@@ -259,6 +259,13 @@ export const COMPARE_QUESTIONS = [
 
 export const PERSPECTIVES = [
   {
+    slug: "does-hypnotherapy-work",
+    href: "/articles/does-hypnotherapy-work",
+    title: "Does Hypnotherapy Actually Work? A Clinical Psychologist Reviews the Evidence",
+    tag: "Evidence",
+    date: "29 Aug 2026",
+  },
+  {
     slug: "clinical-hypnotherapy-india-gcc-evidence",
     title: "Clinical Hypnotherapy in India and the GCC: What the Evidence Actually Supports",
     tag: "Education",
