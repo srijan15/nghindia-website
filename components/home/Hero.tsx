@@ -58,23 +58,19 @@ export default function Hero() {
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <motion.div
           style={{ x: blob1X, y: blob1Y }}
-          className="absolute -top-20 left-1/4 h-[32rem] w-[32rem] rounded-full opacity-40 blur-[110px]"
-          animate={{ scale: [1, 1.08, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-20 left-1/4 h-[32rem] w-[32rem] rounded-full opacity-40 blur-[80px] md:blur-[110px]"
         >
           <div
-            className="h-full w-full rounded-full"
+            className="h-full w-full rounded-full animate-[blob-float_10s_ease-in-out_infinite]"
             style={{ background: "radial-gradient(circle, var(--violet) 0%, transparent 70%)" }}
           />
         </motion.div>
         <motion.div
           style={{ x: blob2X, y: blob2Y }}
-          className="absolute bottom-0 right-1/4 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[110px]"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-0 right-1/4 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[80px] md:blur-[110px]"
         >
           <div
-            className="h-full w-full rounded-full"
+            className="h-full w-full rounded-full animate-[blob-float_12s_ease-in-out_infinite_1s]"
             style={{ background: "radial-gradient(circle, var(--coral) 0%, transparent 70%)" }}
           />
         </motion.div>
