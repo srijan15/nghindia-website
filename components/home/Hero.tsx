@@ -58,20 +58,20 @@ export default function Hero() {
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-20">
         <motion.div
           style={{ x: blob1X, y: blob1Y }}
-          className="absolute -top-20 left-1/4 h-[32rem] w-[32rem] rounded-full opacity-40 blur-[80px] md:blur-[110px]"
+          className="absolute -top-20 left-1/4 h-[32rem] w-[32rem] rounded-full opacity-40"
         >
           <div
             className="h-full w-full rounded-full animate-[blob-float_10s_ease-in-out_infinite]"
-            style={{ background: "radial-gradient(circle, var(--violet) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, var(--violet) 0%, rgba(109,40,217,0.35) 30%, transparent 72%)" }}
           />
         </motion.div>
         <motion.div
           style={{ x: blob2X, y: blob2Y }}
-          className="absolute bottom-0 right-1/4 h-[28rem] w-[28rem] rounded-full opacity-30 blur-[80px] md:blur-[110px]"
+          className="absolute bottom-0 right-1/4 h-[28rem] w-[28rem] rounded-full opacity-30"
         >
           <div
             className="h-full w-full rounded-full animate-[blob-float_12s_ease-in-out_infinite_1s]"
-            style={{ background: "radial-gradient(circle, var(--coral) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(circle, var(--coral) 0%, rgba(251,113,133,0.3) 30%, transparent 72%)" }}
           />
         </motion.div>
       </motion.div>

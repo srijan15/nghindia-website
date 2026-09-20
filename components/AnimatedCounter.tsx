@@ -1,7 +1,7 @@
 "use client";
 
 import { animate, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AnimatedCounter({
   value,
@@ -16,7 +16,24 @@ export default function AnimatedCounter({
 }) {
   const containerRef = useRef<HTMLSpanElement>(null);
   const numberRef = useRef<HTMLSpanElement>(null);
-  const inView = useInView(containerRef, { once: true, margin: "-10% 0px -10% 0px" });
+  const observerInView = useInView(containerRef, { once: true, margin: "-10% 0px -10% 0px" });
+  const [checkedInitial, setCheckedInitial] = useState(false);
+  const [initiallyVisible, setInitiallyVisible] = useState(false);
+
+  // Safari's IntersectionObserver can be slow to fire its first callback on
+  // initial page load, leaving above-the-fold counters stuck at 0 until a
+  // scroll event forces recalculation. Fall back to a synchronous
+  // getBoundingClientRect check so already-visible counters start at once.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      setInitiallyVisible(rect.top < window.innerHeight && rect.bottom > 0);
+    }
+    setCheckedInitial(true);
+  }, []);
+
+  const inView = observerInView || (checkedInitial && initiallyVisible);
 
   useEffect(() => {
     if (!inView) return;
