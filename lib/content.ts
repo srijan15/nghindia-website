@@ -22,7 +22,7 @@ export const ORBIT_CREDENTIALS = [
   { icon: "award", label: "NGH USA, Est. 1950" },
   { icon: "badge-check", label: "RCI-Registered" },
   { icon: "graduation-cap", label: "PhD, Buddhist Psych." },
-  { icon: "trophy", label: "IBCH Certified" },
+  { icon: "trophy", label: "Happy Child Retreat, 24 Yrs" },
   { icon: "brain", label: "NLP Founders' Lineage" },
   { icon: "flower-2", label: "Yoga Alliance Intl." },
   { icon: "building-2", label: "Fortune 500 Experience" },
