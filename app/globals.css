@@ -175,7 +175,7 @@ h1, h2, h3, h4, .font-serif {
 }
 
 /* Custom cursor — desktop only, fine pointers */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
   .cursor-dot,
   .cursor-ring {
     position: fixed;
