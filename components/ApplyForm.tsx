@@ -8,12 +8,33 @@ const labelClass = "block text-xs tracking-widest uppercase text-[var(--ink-fain
 
 export default function ApplyForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    if (data.get("company")) return; // honeypot
-    setSubmitted(true);
+    const payload = Object.fromEntries(data.entries());
+
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error ?? "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -112,11 +133,18 @@ export default function ApplyForm() {
         </div>
       </div>
 
+      {error && (
+        <p className="rounded-lg border border-red-400/40 bg-red-400/10 px-4 py-3 text-sm text-red-400">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--on-accent)] hover:bg-[var(--violet-bright)] transition-colors"
+        disabled={submitting}
+        className="w-full rounded-full bg-[var(--violet)] px-8 py-3.5 text-sm font-medium text-[var(--on-accent)] hover:bg-[var(--violet-bright)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Submit Application
+        {submitting ? "Submitting…" : "Submit Application"}
       </button>
     </form>
   );

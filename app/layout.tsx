@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import PageTransition from "@/components/PageTransition";
 import { cn } from "@/lib/utils";
 import { FloatingTooltipProvider } from "@/components/floating-tooltip";
+import Analytics from "@/components/Analytics";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
+          <Analytics />
         </FloatingTooltipProvider>
       </body>
     </html>
